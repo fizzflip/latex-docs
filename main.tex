@@ -47,7 +47,7 @@
 \maketitle
 
 \begin{abstract}
-This document serves as a demonstration and verification of the LaTeX development environment powered by NixOS and \texttt{devenv}. It showcases mathematical typesetting, code listings, vector graphics via TikZ, and bibliographic references.
+	This document serves as a demonstration and verification of the LaTeX development environment powered by NixOS and \texttt{devenv}. It showcases mathematical typesetting, code listings, vector graphics via TikZ, and bibliographic references.
 \end{abstract}
 
 \section{Introduction}
@@ -58,31 +58,31 @@ As noted by Leslie Lamport~\cite{lamport1986latex}, LaTeX provides an intuitive 
 \section{Mathematical Formulations}
 LaTeX excels at mathematical notation. For example, Euler's identity is given by:
 \begin{equation}
-    e^{i\pi} + 1 = 0
+	e^{i\pi} + 1 = 0
 \end{equation}
 
 We can also express the Gaussian integral:
 \begin{equation}
-    \int_{-\infty}^{\infty} e^{-x^2} \, dx = \sqrt{\pi}
+	\int_{-\infty}^{\infty} e^{-x^2} \, dx = \sqrt{\pi}
 \end{equation}
 
 \section{TikZ Diagram Example}
 Below is a simple architecture diagram rendered natively using TikZ.
 
 \begin{figure}[htbp]
-\centering
-\begin{tikzpicture}[
-    box/.style={draw, rectangle, rounded corners, minimum width=2.5cm, minimum height=1cm, align=center, fill=blue!10},
-    arrow/.style={->, >=stealth, thick}
-]
-    \node[box] (nix) {Nix Flakes};
-    \node[box, right=1.5cm of nix] (devenv) {Devenv Shell};
-    \node[box, right=1.5cm of devenv] (pdf) {PDF Output};
+	\centering
+	\begin{tikzpicture}[
+			box/.style={draw, rectangle, rounded corners, minimum width=2.5cm, minimum height=1cm, align=center, fill=blue!10},
+			arrow/.style={->, >=stealth, thick}
+		]
+		\node[box] (nix) {Nix Flakes};
+		\node[box, right=1.5cm of nix] (devenv) {Devenv Shell};
+		\node[box, right=1.5cm of devenv] (pdf) {PDF Output};
 
-    \draw[arrow] (nix) -- (devenv);
-    \draw[arrow] (devenv) -- (pdf);
-\end{tikzpicture}
-\caption{Hermetic LaTeX Compilation Pipeline}\label{fig:pipeline}
+		\draw[arrow] (nix) -- (devenv);
+		\draw[arrow] (devenv) -- (pdf);
+	\end{tikzpicture}
+	\caption{Hermetic LaTeX Compilation Pipeline}\label{fig:pipeline}
 \end{figure}
 
 \section{Code Listings}
