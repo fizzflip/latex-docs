@@ -7,7 +7,15 @@
       ],
       "settings": {
         "latex-workshop.latex.autoBuild.run": "onSave",
+        "latex-workshop.latex.outDir": "%DIR%/build",
         "latex-workshop.view.pdf.viewer": "tab",
+        "texlab.build.args": [
+          "-pdf",
+          "-outdir=build",
+          "-interaction=nonstopmode",
+          "-synctex=1",
+          "%f"
+        ],
         "texlab.build.onSave": true
       }
     },

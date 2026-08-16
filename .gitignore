@@ -1,3 +1,6 @@
+# Build output directory
+build/
+
 # Devenv & direnv environment directories
 .devenv/
 .direnv/
@@ -24,7 +27,7 @@
 *.snm
 *.vrb
 
-# Compiled PDF output (ignore generated build outputs)
+# Compiled PDF output
 *.pdf
 
 # OS & Editor files

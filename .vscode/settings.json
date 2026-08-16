@@ -1,4 +1,5 @@
 {
+  "latex-workshop.latex.outDir": "%DIR%/build",
   "latex-workshop.latex.tools": [
     {
       "name": "latexmk",
@@ -8,7 +9,33 @@
         "-interaction=nonstopmode",
         "-file-line-error",
         "-pdf",
-        "-outdir=%OUTDIR%",
+        "-outdir=build",
+        "%DOC%"
+      ],
+      "env": {}
+    },
+    {
+      "name": "xelatexmk",
+      "command": "latexmk",
+      "args": [
+        "-synctex=1",
+        "-interaction=nonstopmode",
+        "-file-line-error",
+        "-xelatex",
+        "-outdir=build",
+        "%DOC%"
+      ],
+      "env": {}
+    },
+    {
+      "name": "lualatexmk",
+      "command": "latexmk",
+      "args": [
+        "-synctex=1",
+        "-interaction=nonstopmode",
+        "-file-line-error",
+        "-lualatex",
+        "-outdir=build",
         "%DOC%"
       ],
       "env": {}
@@ -16,9 +43,21 @@
   ],
   "latex-workshop.latex.recipes": [
     {
-      "name": "latexmk 🛠️",
+      "name": "latexmk (pdfLaTeX) 🛠️",
       "tools": [
         "latexmk"
+      ]
+    },
+    {
+      "name": "latexmk (XeLaTeX) 🛠️",
+      "tools": [
+        "xelatexmk"
+      ]
+    },
+    {
+      "name": "latexmk (LuaLaTeX) 🛠️",
+      "tools": [
+        "lualatexmk"
       ]
     }
   ],
@@ -30,6 +69,7 @@
   "texlab.build.executable": "latexmk",
   "texlab.build.args": [
     "-pdf",
+    "-outdir=build",
     "-interaction=nonstopmode",
     "-synctex=1",
     "%f"
